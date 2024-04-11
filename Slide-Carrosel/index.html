@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bliblioteca de Elementos de HTML com CSS e JS</title>
+    <title>Biblioteca de Elementos de HTML com CSS e JS</title>
     <link rel="stylesheet" href="slide.css">
 </head>
 <body>
     <section class="carousel" aria-label="Gallery">        
         <ol class="carousel__viewport">
-            <li id="carousel__slide1" tabindex="0" class="carousel__slide">
+            <li id="carousel__slide1" tabindex="0" class="carousel__slide carousel__slide--current">
                 <div class="carousel__snapper desktop" style="background-image: url('imagens/1.png');"></div>
                 <div class="carousel__snapper mobile" style="background-image: url('imagens/4.png');"></div>
-                <a href="#carousel__slide4" class="carousel__prev">Go to last slide</a>
+                <a href="#carousel__slide3" class="carousel__prev">Go to last slide</a>
                 <a href="#carousel__slide2" class="carousel__next">Go to next slide</a>
             </li>
             <li id="carousel__slide2" tabindex="0" class="carousel__slide">
@@ -31,7 +31,7 @@
         <aside class="carousel__navigation">
             <ol class="carousel__navigation-list">
                 <li class="carousel__navigation-item">
-                    <a href="#carousel__slide1" class="carousel__navigation-button">Go to slide 1</a>
+                    <a href="#carousel__slide1" class="carousel__navigation-button carousel__navigation-button--active">Go to slide 1</a>
                 </li>
                 <li class="carousel__navigation-item">
                     <a href="#carousel__slide2" class="carousel__navigation-button">Go to slide 2</a>
@@ -42,6 +42,6 @@
             </ol>
         </aside>
     </section>
-
+    
 </body>
 </html>

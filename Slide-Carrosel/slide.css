@@ -156,6 +156,9 @@ parece estar mais distante do observador.
       scroll-snap-align: center;
     }
   }
+  .active{
+    background-color: #fff;
+  }
   
 @media (prefers-reduced-motion: reduce) {
   .carousel__snapper {
