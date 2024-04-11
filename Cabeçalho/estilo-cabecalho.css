@@ -1,0 +1,120 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('fontes/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Montserrat';
+    font-style: italic;
+    src: url('fontes/Montserrat/Montserrat-Italic-VariableFont_wght.ttf') format('truetype');
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.cabecalho{
+    display: fixed;
+    width: 100%;
+    height: 70px;
+}
+.margem{
+    display: flex;
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+}
+.contatos{
+    display: flex;
+    width: 100%;
+    height: 30%;
+    background-color: #270066;
+    flex-direction: row;
+}
+.contatos img{
+    margin:auto 0;
+    margin-right: 8px;
+    height: 60%;
+}
+.contatos img.email{
+    margin-left: 3%;
+}
+.contatos span{
+    margin:auto 0;
+    font-size: 70%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+}
+.contatos span a{
+    color: #f4f4f4;
+    text-decoration: none;
+}
+.container{
+    display: flex;
+    width: 100%;
+    height: 75%;
+    background-color: #f4f4f4;
+}
+img.logo{
+    height: 100%;
+}
+a.logo{
+    height: 90%;
+    margin: auto 0;
+    margin-right: 3%;
+}
+.menu{
+    display: flex;
+    height: 100%;
+    width: 50%;
+}
+.menu ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+}
+.menu ul li{
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    flex: 1;
+}
+.menu ul li a{
+    text-decoration: none;
+    color: #333;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 3rem;
+}
+.menu ul li a:hover{
+    text-shadow: 0 0 8px #333;
+}
+.menu ul li:hover > ul{
+    display: block;
+}
+.menu ul li ul{
+    display: none;
+    background-color: #f4f4f4;
+    border-top:3px solid #270066;
+}
+.menu ul li ul li{
+    height: auto;
+}
+.menu ul li ul li a{
+    text-align: left;
+    padding-left:0.5rem;
+}
+@media screen and (max-width:600px){
+    .menu{
+        width: 100%;
+    }
+    .menu ul li ul{
+        position: absolute;
+        top:73px;
+        left:5%;
+        width:90%;
+
+    }
+}
