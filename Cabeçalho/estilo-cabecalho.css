@@ -47,6 +47,7 @@
 .contatos span a{
     color: #f4f4f4;
     text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
 }
 .container{
     display: flex;
@@ -87,6 +88,7 @@ a.logo{
     height: 100%;
     text-align: center;
     line-height: 3rem;
+    font-family: 'Montserrat', sans-serif;
 }
 .menu ul li a:hover{
     text-shadow: 0 0 8px #333;
