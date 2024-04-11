@@ -1,0 +1,146 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('fontes/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Montserrat';
+    font-style: italic;
+    src: url('fontes/Montserrat/Montserrat-Italic-VariableFont_wght.ttf') format('truetype');
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+footer{
+    width: 100%;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    background-color: #333;
+}
+.box{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 95%;
+}
+.left{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.left .logomarca{
+    height: 35%;
+    margin:5% auto;
+}
+.left .tituloleft{
+    margin: 5% auto;
+    color: #f4f4f4;
+    font-family: 'Montserrat', sans-serif;
+}
+.left .paragrafoleft{
+    width: 90%;
+    margin: 5% auto;
+    color: #f4f4f4;
+    font-family: 'Montserrat', sans-serif;
+}
+.center{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.center .titulocenter{
+    margin: 3% auto;
+    color: #f4f4f4;
+    font-family: 'Montserrat', sans-serif;
+}
+.center .paragrafocenter{
+    width: 90%;
+    margin: 5% auto;
+    color: #f4f4f4;
+    font-family: 'Montserrat', sans-serif;
+}
+.right{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.right .tituloright{
+    margin: 5% auto;
+    color: #f4f4f4;
+    font-family: 'Montserrat', sans-serif;
+}
+.right .paragraforight{
+    width: 90%;
+    margin: 5% auto;
+    color: #f4f4f4;
+    font-family: 'Montserrat', sans-serif;
+}
+.redessociais{
+    display: flex;
+    margin-top:auto;
+    width: 100%;
+    justify-content: right;
+}
+.redessociais a{
+    margin: 2%;
+}
+.redessociais a img{
+    height: 25px;
+}
+.copyright{
+    width: 100%;
+    color: #f4f4f4;
+    text-align: center;
+}
+@media screen and (max-width:500px){
+    footer{
+        height: 260px;
+    }
+    .left .logomarca{
+        height: 20%;
+        margin:8% auto;
+    }
+    .left .tituloleft{
+        margin: 8% auto;
+        font-size: 0.65rem;
+    }
+    .left .paragrafoleft{
+        margin: 8% auto;
+        font-size: 0.5rem;
+    }
+    .center .titulocenter{
+        margin: 10% auto;
+        font-size: 0.65rem;
+    }
+    .center .paragrafocenter{
+        margin: 8% auto;
+        font-size: 0.5rem;
+    }
+    .right .tituloright{
+        margin: 8% auto;
+        font-size: 0.65rem;
+    }
+    .right .paragraforight{
+        margin: 10% auto;
+        font-size: 0.5rem;
+    }
+    .redessociais{
+        display: flex;
+        margin-top:auto;
+        width: 100%;
+        justify-content: right;
+        margin-bottom: 10%;
+    }
+    .redessociais a{
+        margin: 2%;
+    }
+    .redessociais a img{
+        height: 15px;
+    }
+    .copyright{
+        font-size: 0.5rem;
+    }
+}
