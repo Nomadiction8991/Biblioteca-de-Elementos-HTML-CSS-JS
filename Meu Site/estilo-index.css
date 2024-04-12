@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.estrutura{
+    display: grid;
+    grid-template-rows: 75px auto 60px 60px 40px;
+    grid-template-columns:auto;
+    grid-template-areas: 
+    'cabecalho cabecalho cabecalho'
+    'menu conteudo conteudo' 
+    'menu graficos graficos' 
+    'menu estatisticas estatisticas' 
+    'menu rodape rodape';
+    height: 100vh;
+}
+header{
+    grid-area: cabecalho;
+    background-color: #111;
+}
+.perfil{
+    height: 100%;
+}
+.perfil img{
+    margin: 10px;
+    height: 55px;
+    border-radius: 50%;
+}
+nav{
+    grid-area: menu;
+    background-color: #111;
+
+}
+main{
+    grid-area: conteudo;
+    background-color: yellow;
+    padding: 0 5%;
+}
+article{
+    background-color: purple;
+    
+}
+article.graficos{
+    grid-area: graficos;
+    padding-left:10%;
+}
+article.estatisticas{
+    grid-area: estatisticas;
+    padding-right:10%;
+}
+footer{
+    grid-area: rodape;
+    background-color: green;
+    padding: 0 5%;
+}
+@media (min-width: 550px){
+    .estrutura{
+        grid-template-rows: 50px 25px auto 200px;
+        grid-template-columns:auto;
+        grid-template-areas: 
+        'cabecalho menu'
+        'cabecalho menu '
+        'conteudo conteudo' 
+        'graficos estatisticas' 
+        'rodape rodape';
+    }
+    .perfil img:hover{
+        height: 70px;
+        margin:2.5px;
+        transition: 0.5s;
+    }
+}
