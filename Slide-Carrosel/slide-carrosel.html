@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteca de Elementos de HTML com CSS e JS</title>
-    <link rel="stylesheet" href="slide.css">
+    <link rel="stylesheet" href="estilo-slide-carrosel.css">
 </head>
 <body>
     <section class="carousel" aria-label="Gallery">        
@@ -31,7 +31,7 @@
         <aside class="carousel__navigation">
             <ol class="carousel__navigation-list">
                 <li class="carousel__navigation-item">
-                    <a href="#carousel__slide1" class="carousel__navigation-button carousel__navigation-button--active">Go to slide 1</a>
+                    <a href="#carousel__slide1" class="carousel__navigation-button activeColor">Go to slide 1</a>
                 </li>
                 <li class="carousel__navigation-item">
                     <a href="#carousel__slide2" class="carousel__navigation-button">Go to slide 2</a>
@@ -42,6 +42,43 @@
             </ol>
         </aside>
     </section>
-    
+    <script>
+        var anchors = ['carousel__slide1', 'carousel__slide2', 'carousel__slide3'];
+        var currentIndex = 0;
+        var intervalId;
+        function transitionAnchors() {
+            document.getElementById(anchors[currentIndex]).scrollIntoView({ behavior: 'smooth' });
+            var navigationItems = document.querySelectorAll('.carousel__navigation-button');
+            for (var i = 0; i < navigationItems.length; i++) {
+                if (i === currentIndex) {
+                    navigationItems[i].classList.add('activeColor');
+                } else {
+                    navigationItems[i].classList.remove('activeColor');
+                }
+            }
+            currentIndex++;
+            if (currentIndex >= anchors.length) {
+                currentIndex = 0;
+            }
+        }
+        function startTransition() {
+            intervalId = setInterval(transitionAnchors, 7000);
+        }
+        function stopTransition() {
+            clearInterval(intervalId);
+        }
+        startTransition();
+        var carousel = document.querySelector('.carousel');
+        carousel.addEventListener('mouseenter', stopTransition);
+        carousel.addEventListener('mouseleave', startTransition);
+        var navigationItems = document.querySelectorAll('.carousel__navigation-button');
+        navigationItems.forEach(function(item, index) {
+            item.addEventListener('click', function(event) {
+            event.preventDefault();
+            currentIndex = index;
+            transitionAnchors();
+            });
+        });
+    </script>
 </body>
 </html>
