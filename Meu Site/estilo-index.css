@@ -1,73 +1,211 @@
+/*MOBILE*/
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 .estrutura{
     display: grid;
-    grid-template-rows: 75px auto 60px 60px 40px;
-    grid-template-columns:auto;
+    grid-template-rows: 75px 48px auto auto auto auto;
+    grid-template-columns:100%;
     grid-template-areas: 
-    'cabecalho cabecalho cabecalho'
-    'menu conteudo conteudo' 
-    'menu graficos graficos' 
-    'menu estatisticas estatisticas' 
-    'menu rodape rodape';
+    'cabecalho cabecalho'
+    'menu menu'
+    'conteudo conteudo' 
+    'projetos projetos' 
+    'habilidades habilidades' 
+    'certificacoes certificacoes' 
+    'rodape rodape';
     height: 100vh;
 }
 header{
-    grid-area: cabecalho;
+    position: fixed;
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns:20% 80%;
+    width: 100%;
+    height: 76px;
     background-color: #111;
+    grid-template-areas: 
+    'foto-perfil nome';
 }
 .perfil{
-    height: 100%;
+    display: flex;
+    grid-area: foto-perfil;
+    padding: 10%;
+    justify-content: center;
 }
 .perfil img{
-    margin: 10px;
-    height: 55px;
+    height: 100%;
     border-radius: 50%;
 }
+.nome{
+    color: #fff;
+    text-shadow: 0 2px 8px #555;
+    grid-area: nome;
+}
+.nome h1{
+    font-weight: 400;
+    font-size: 1.3rem;
+    padding-block: calc(35px - 0.6rem);
+}
 nav{
-    grid-area: menu;
     background-color: #111;
-
+    position: fixed;
+    width: 100%;
+    top: 75px;
+    height: 48px;
 }
 main{
     grid-area: conteudo;
-    background-color: yellow;
+    background-color: #f4f4f4;
     padding: 0 5%;
 }
-article{
-    background-color: purple;
-    
+article.projetos{
+    grid-area: projetos;
+    background-color: #e6e6e6;
+    padding: 0 5%;
 }
-article.graficos{
-    grid-area: graficos;
-    padding-left:10%;
+article.habilidades{
+    grid-area: habilidades;
+    background-color: #f4f4f4;
+    overflow: hidden;
+    height: 250px;
+    text-align: center;
 }
-article.estatisticas{
-    grid-area: estatisticas;
-    padding-right:10%;
+article.certificacoes{
+    grid-area: certificacoes;
+    background-color: #e6e6e6;
+    padding: 0 5%;
 }
 footer{
     grid-area: rodape;
-    background-color: green;
+    background-color: #111;
     padding: 0 5%;
 }
-@media (min-width: 550px){
+.menu{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    
+}
+.menu li {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    height: 3rem;
+}
+.menu li a{
+    width: 100%;
+    line-height: 3rem;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+}
+.menu li a:hover{
+    background-color: #222;
+    transition: 0.5s;
+}
+main h1, article h1{
+    display: flex;
+    color: #222;
+    width: 100%;
+    margin: 8% 0;
+    justify-content: center;
+    font-weight: 500;
+}
+main h3, article h3{
+    display: flex;
+    color: #222;
+    width: 100%;
+    margin: 4% 0;
+    justify-content: center;
+    font-weight: 500;
+}
+main p, article p{
+    text-align: left;
+    margin: 5% 0;
+    color: #333;
+}
+.galeria-site-portotech{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+}
+.galeria-site-portotech>img{
+    width: 100%;
+    aspect-ratio: 2 / 1; 
+    object-fit: cover;
+}  
+
+.galeria-habilidades{
+    display: flex;
+    width: 100%;
+    animation: passagemauto infinite 7s ease;
+}
+.galeria-habilidades-item {
+    flex: 0 0 auto;
+    width: 50%;
+}
+.galeria-habilidades-item img{
+    padding-top: 7%;
+    height: 70%;
+}
+@keyframes passagemauto {
+    0%{
+        transform: translateX(0%);
+    }
+    25%{
+        transform: translateX(-50%);
+    }
+    50%{
+        transform: translateX(-100%);
+    }
+    75%{
+        transform: translateX(-150%);
+    }
+    100%{
+        transform: translateX(-00%);
+    }
+
+}
+/*TABLET*/
+@media (min-width: 600px){
+    header{
+        grid-template-columns:17% 83%;
+    }
+}
+/*DESKTOP*/
+@media (min-width: 1000px){
     .estrutura{
-        grid-template-rows: 50px 25px auto 200px;
+        grid-template-rows: 50px 25px auto auto auto auto;
         grid-template-columns:auto;
         grid-template-areas: 
         'cabecalho menu'
         'cabecalho menu '
         'conteudo conteudo' 
-        'graficos estatisticas' 
+        'projetos projetos'
+        'habilidades habilidades'
+        'certificacoes certificacoes'
         'rodape rodape';
     }
-    .perfil img:hover{
-        height: 70px;
-        margin:2.5px;
-        transition: 0.5s;
+    header{
+        width: 50%;
+        grid-template-columns:20% 80%;
+    }
+    nav{
+        position: fixed;
+        width: 50%;
+        height: 75px;
+        left: 50%;
+        top:0;
+    }
+    .menu li{
+        height: 100%;
+    }
+    .menu li a{
+        line-height: 4.8rem;
     }
 }
