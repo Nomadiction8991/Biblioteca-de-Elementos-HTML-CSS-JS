@@ -51,6 +51,7 @@ header{
     font-weight: 400;
     font-size: 1.3rem;
     padding-block: calc(35px - 0.6rem);
+    padding-left: 5%;
 }
 nav{
     background-color: #111;
@@ -258,14 +259,21 @@ footer a{
     width: 10%;
     margin-inline:3%;
 }
+.desktop{
+    display: none;
+}
 /*TABLET*/
 @media (min-width: 400px){
     header{
         grid-template-columns:17% 83%;
     }
 }
+
 /*DESKTOP*/
 @media (min-width: 1000px){
+    .desktop{
+        display: block;
+    }
     .estrutura{
         grid-template-rows: 50px 25px auto auto auto auto;
         grid-template-columns:auto;
@@ -285,7 +293,7 @@ footer a{
     nav{
         position: fixed;
         width: 50%;
-        height: 75px;
+        height: 76px;
         left: 50%;
         top:0;
     }
